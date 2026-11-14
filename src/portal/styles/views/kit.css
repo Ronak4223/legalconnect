@@ -1,0 +1,23 @@
+/* styles/views/kit.css — split from the original build; rule order within the file is unchanged. */
+.lp-kit {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem 1.2rem 4rem;
+}
+.lp-kit-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+.lp-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+.lp-kit-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}

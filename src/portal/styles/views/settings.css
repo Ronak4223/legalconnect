@@ -1,0 +1,86 @@
+/* styles/views/settings.css — split from the original build; rule order within the file is unchanged. */
+.lp-set {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 880px;
+  margin-top: 1.25rem;
+}
+.lp-privrows li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.lp-privrows {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.lp-sessions li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-sessions li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-sessions li > div {
+  display: grid;
+  min-width: 0;
+}
+.lp-sessions small {
+  color: var(--lc-text-2);
+  font-size: 0.8rem;
+}
+.lp-faq {
+  display: grid;
+}
+.lp-faq details {
+  border-top: 1px solid var(--lc-line);
+  padding: 0.8rem 0;
+}
+.lp-faq details:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  min-height: 32px;
+}
+.lp-faq summary::-webkit-details-marker {
+  display: none;
+}
+.lp-faq summary:after {
+  content: "+";
+  font-size: 1.3rem;
+  color: var(--lc-teal-700);
+  line-height: 1;
+}
+.lp-faq details[open] summary:after {
+  content: "–";
+}
+.lp-faq details p {
+  margin-top: 0.5rem;
+  color: var(--lc-text-2);
+  max-width: 66ch;
+}
+@media (max-width: 720px) {
+  .lp-sessions li {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+  .lp-sessions li > :last-child {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

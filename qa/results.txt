@@ -1,0 +1,138 @@
+# QA results — 2026-11-02T01:24Z — production build served by 'vite preview'
+
+## public site (React): behaviour, a11y, assets, animation, reduced-motion
+PASS desktop: no console/JS/HTTP errors []
+PASS desktop: no horizontal overflow [1440, 1440]
+PASS desktop: all 25 images load []
+PASS Lenis active (html.lenis) 
+PASS GSAP SplitText ran on hero h1 
+PASS after scroll-through, no content stuck invisible []
+PASS desktop: axe violations []
+PASS tablet: no console/JS/HTTP errors []
+PASS tablet: no horizontal overflow [768, 768]
+PASS tablet: all 25 images load []
+PASS tablet: axe violations []
+PASS mobile: no console/JS/HTTP errors []
+PASS mobile: no horizontal overflow [390, 390]
+PASS mobile: all 25 images load []
+PASS mobile: axe violations []
+PASS hero search: empty shows error 
+PASS hero search: typing clears error 
+PASS hero search: ok message 
+PASS area picker: pressed + message + hero input synced 
+PASS stories: next changes quote “LegalConnect made the process
+PASS people: strip click changes lawyer 
+PASS people: profile toggles bio 
+PASS journey: stage 4 selected 
+PASS help: node pressed + message 
+PASS cases: autoplay pressed 
+PASS directory: "mumbai" search filters to Mumbai first 142 lawyers found for Family Law in Mumbai
+PASS directory: sort A–Z orders names ['Priya Sharma', 'Kabir Malhotra', 'Aarav Mehta', 'Arjun Iyer']
+PASS directory: "All Areas" heading 610 lawyers found across all areas in Mumbai
+PASS directory: pagination shows 2 pages and paging works 
+PASS directory: page 2 shows remaining 3 3
+PASS profile dialog opens with title 
+PASS Esc closes dialog and page not locked 
+PASS login: honest unavailable message 
+PASS Privacy → /privacy route placeholder calhost:4173/privacy
+PASS Back returns to home 
+PASS unknown route → Page not found 
+PASS no JS errors during behaviour tests []
+PASS reduced-motion: Lenis off 
+PASS reduced-motion: hero fully visible at once 
+PASS reduced-motion: mid-page content visible 
+
+FAILS: []
+
+## public site: pixel diff vs original vanilla page (animations off, desktop + mobile)
+desktop vanilla (1440, 15833) react (1440, 15833)
+  0.001% pixels differ
+  worst bands (y, %): [(9100, 0.01), (11900, 0.01), (0, 0.0), (700, 0.0)]
+mobile vanilla (390, 14884) react (390, 14884)
+  0.004% pixels differ
+  worst bands (y, %): [(7700, 0.05), (10500, 0.02), (11200, 0.0), (0, 0.0)]
+
+## portal: behave
+PASS no JS errors across 10 routes (fonts blocked) []
+PASS guard: signed-out /dashboard -> /login http://localhost:4173/portal/#/login
+PASS guard: signed-out /payments -> login http://localhost:4173/portal/#/login
+PASS guard: signed-out /messages/x -> login http://localhost:4173/portal/#/login
+PASS guard: signed-out /appointments/zzz -> login http://localhost:4173/portal/#/login
+PASS guard: signed-out /settings -> login http://localhost:4173/portal/#/login
+PASS signed-in visit to /login redirects away alhost:4173/portal/#/dashboard
+PASS unknown id /nope/deep handled gracefully []
+PASS unknown id /appointments/zzz handled gracefully []
+PASS unknown id /clients/zzz handled gracefully []
+PASS unknown id /cases/zzz handled gracefully []
+PASS unknown id /messages/zzz handled gracefully []
+PASS unknown id /appointments/%3Cscript%3E handled gracefully []
+PASS first Tab stop is skip link lp-skip|Skip to main content
+PASS skip link keeps user on same route (no hash-router break) http://localhost:4173/portal/#/clients
+PASS skip link moves focus into main MAIN#lp-main
+PASS sign-out asks for confirmation 
+PASS Esc cancels sign-out dialog and stays signed in 
+PASS sign-out lands on /login /localhost:4173/portal/#/login
+PASS after sign-out, Back does not expose portal /localhost:4173/portal/#/login
+PASS corrupt storage (garbage text) recovers []
+PASS corrupt storage (empty object) recovers []
+PASS corrupt storage (null) recovers []
+PASS corrupt storage (array) recovers []
+PASS corrupt storage (wrong shape) recovers []
+PASS corrupt session value -> login, no crash []
+PASS state key present after first load ['lp_demo_state_v2']
+FAILS: []
+## portal: ui2
+PASS dialog open moves focus inside 
+PASS axe clean: Add client dialog (open) []
+PASS focus trapped in modal after 14 Tabs 
+PASS Esc closes dialog 
+PASS focus returns to trigger Add client
+PASS empty submit shows field errors 
+PASS invalid field flagged aria-invalid 
+PASS focus moved to first invalid field INPUT
+PASS axe clean: Add client dialog with errors []
+PASS hostile client added w/o execution []
+PASS hostile name rejected by validation (dialog stays open, error shown) 
+PASS hostile name never stored or rendered after reload 
+PASS appointment times identical across browser time zones (IST pinned) 
+PASS reduced motion: dialog animation ~0 ['1e-05s', '0s']
+PASS reduced motion: no long running animations on page 0
+PASS mobile drawer opens 
+PASS axe clean: mobile drawer open []
+PASS Esc closes mobile drawer 
+PASS focus returns to burger after drawer close lp-icon-btn lp-burger
+PASS page behind open drawer is inert/hidden to AT inert
+PASS Tab does not escape into page behind drawer A.lp-side-logo
+FAILS:
+## portal: sec
+## portal: error boundary
+PASS dashboard still renders with unvalidated bad field 
+PASS render crash shows boundary, not white screen 'Something went wrong\n\nThe portal hit an unexpected problem. This demo '
+PASS boundary has role=alert + 2 actions 
+PASS boundary screen axe-clean []
+PASS Restore returns to a working login lhost:4173/portal/#/login
+PASS profile works again after restore 
+## portal: partial-corruption recovery
+verification=null              blank/h1-less routes: none | js errors: 0 []
+appointments=[{}]              blank/h1-less routes: none | js errors: 0 []
+appointment missing client     blank/h1-less routes: none | js errors: 0 []
+notifications=[{id:1}]         blank/h1-less routes: none | js errors: 0 []
+lawyer.availability=null       blank/h1-less routes: none | js errors: 0 []
+lawyer.clients=null            blank/h1-less routes: none | js errors: 0 []
+payouts=null                   blank/h1-less routes: none | js errors: 0 []
+## portal: drawer focus
+390 side: {'left': -300, 'right': 0, 'vis': 'hidden', 'transform': True} | focus stops while drawer closed -> {'other': 60}
+768 side: {'left': -300, 'right': 0, 'vis': 'hidden', 'transform': True} | focus stops while drawer closed -> {'other': 60}
+1024 side: {'left': 0, 'right': 264, 'vis': 'visible', 'transform': False} | focus stops while drawer closed -> {'side': 11, 'other': 49}
+1440 side: {'left': 0, 'right': 264, 'vis': 'visible', 'transform': False} | focus stops while drawer closed -> {'side': 11, 'other': 49}
+## portal: pixel diff vs previous single-file build (all routes, desktop + mobile)
+max diff 0.004%
+## portal: axe sweep (3 viewports x 19 routes; scans after the route animation settles)
+##### overflow: 0
+
+##### axe: 3
+  ["desktop /availability", "label-content-name-mismatch", "serious", 10, "button[aria-label=\"Sunday 1 November: closed\"]"]
+  ["tablet /availability", "label-content-name-mismatch", "serious", 10, "button[aria-label=\"Sunday 1 November: closed\"]"]
+  ["mobile /availability", "label-content-name-mismatch", "serious", 4, ".is-today"]
+
+##### a11y: 26

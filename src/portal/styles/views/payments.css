@@ -1,0 +1,91 @@
+/* styles/views/payments.css — split from the original build; rule order within the file is unchanged. */
+.lp-feerows {
+  display: grid;
+  gap: 1rem;
+}
+.lp-feerow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-feerow:first-child {
+  border-top: 0;
+}
+@media (max-width: 720px) {
+  .lp-feerow {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+.lp-tx {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-tx:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-tx-date {
+  color: var(--lc-text-3);
+  font-size: 0.75rem;
+}
+.lp-tx-amt {
+  display: grid;
+  justify-items: end;
+  text-align: right;
+}
+.lp-tx-amt strong {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--lp-ok-t);
+}
+.lp-tx-amt strong.is-neg {
+  color: var(--lc-navy);
+}
+.lp-tx-amt small {
+  color: var(--lc-text-2);
+  font-size: 0.75rem;
+}
+.lp-tx-act {
+  display: grid;
+  justify-items: end;
+  gap: 0.4rem;
+}
+.lp-receipt {
+  display: grid;
+  gap: 0.9rem;
+}
+.lp-receipt-demo {
+  background: #c58a2b26;
+  border: 1px solid rgba(197, 138, 43, 0.5);
+  color: #5e3e0b;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .lp-tx {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+  .lp-tx-amt,
+  .lp-tx-act {
+    grid-column: 2;
+    justify-items: start;
+    text-align: left;
+  }
+  .lp-tx-act {
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+  }
+}

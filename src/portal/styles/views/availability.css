@@ -1,0 +1,373 @@
+/* styles/views/availability.css — split from the original build; rule order within the file is unchanged. */
+.lp-day {
+  display: grid;
+  gap: 0.5rem;
+}
+.lp-day-l {
+  text-align: center;
+  margin: 0.6rem 0 0.2rem;
+}
+.lp-day-l span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lc-text-2);
+  background: var(--lc-surface);
+  border: 1px solid var(--lc-line);
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+}
+.lp-hoursum {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+.lp-hoursum li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--lc-line);
+}
+.lp-hoursum span {
+  color: var(--lc-text-2);
+  font-weight: 500;
+}
+.lp-hoursum strong {
+  font-weight: 500;
+  text-align: right;
+}
+.lp-aside {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+.lp-week {
+  display: grid;
+}
+.lp-week > li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--lc-line);
+  align-items: start;
+}
+.lp-week > li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-week > li.has-error-day {
+  outline: 2px solid rgba(168, 64, 47, 0.35);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.lp-week-h {
+  padding-top: 0.5rem;
+}
+.lp-week-r {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  min-width: 0;
+}
+.lp-calnav {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.lp-calnav strong {
+  min-width: 8.5rem;
+  text-align: center;
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+}
+.lp-cal {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
+  table-layout: fixed;
+}
+.lp-cal th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lc-text-2);
+  font-weight: 600;
+  padding: 0.2rem 0;
+}
+.lp-cal td {
+  padding: 0;
+}
+.lp-day-c {
+  position: relative;
+  width: 100%;
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--lc-line);
+  border-radius: 0.6rem;
+  background: #fff;
+  color: var(--lc-navy);
+  cursor: pointer;
+  text-align: left;
+}
+.lp-day-c:hover {
+  border-color: var(--lc-teal);
+}
+.lp-day-n {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.lp-day-c.is-closed {
+  background: var(--lc-ivory-2);
+  color: var(--lc-text-2);
+}
+.lp-day-c.is-blocked {
+  background: repeating-linear-gradient(
+    135deg,
+    #fbf1dc,
+    #fbf1dc 6px,
+    #f6e6c4 6px,
+    #f6e6c4 12px
+  );
+  color: #5e3e0b;
+}
+.lp-day-c.is-out {
+  background: transparent;
+  border-style: dashed;
+  color: var(--lc-text-2);
+}
+.lp-day-c.is-past:not(.is-sel) {
+  background: #0d23400a;
+  color: var(--lc-text-2);
+}
+.lp-day-c.is-today {
+  border: 2px solid var(--lc-teal);
+}
+.lp-day-c.is-sel {
+  background: var(--lc-teal);
+  border-color: var(--lc-teal);
+  color: var(--lc-ivory);
+}
+.lp-day-badge {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.35rem;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 0.3rem;
+  border-radius: 10px;
+  background: var(--lc-teal);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.is-sel .lp-day-badge {
+  background: var(--lc-ivory);
+  color: var(--lc-teal);
+}
+.lp-day-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.lp-day-warn {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0.35rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--lc-danger);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.lp-day-c.has-conflict {
+  box-shadow: inset 0 0 0 2px #a8402f80;
+}
+.lp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin-top: 0.8rem;
+  font-size: 0.78rem;
+  color: var(--lc-text-2);
+}
+.lp-legend li {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+.lp-legend i {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--lc-line-2);
+  display: inline-block;
+}
+.lp-legend .is-open {
+  background: #fff;
+}
+.lp-legend .is-closed {
+  background: var(--lc-ivory-2);
+}
+.lp-legend .is-blocked {
+  background: repeating-linear-gradient(
+    135deg,
+    #fbf1dc,
+    #fbf1dc 3px,
+    #f6e6c4 3px,
+    #f6e6c4 6px
+  );
+}
+.lp-legend .is-count {
+  background: var(--lc-teal);
+  border-color: var(--lc-teal);
+}
+.lp-legend .is-warn {
+  background: var(--lc-danger);
+  border-color: var(--lc-danger);
+}
+.lp-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 0.6rem;
+}
+.lp-slots li {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--lc-r-md);
+  border: 1px solid var(--lc-line);
+  font-size: 0.8125rem;
+}
+.lp-slots strong {
+  font-size: 0.95rem;
+}
+.lp-slots small {
+  color: var(--lc-text-2);
+}
+.lp-slots span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.lp-slots li.is-available {
+  background: #2f8f831a;
+  border-color: #2f8f8366;
+  color: #144a43;
+}
+.lp-slots li.is-available small {
+  color: #144a43;
+}
+.lp-slots li.is-booked {
+  background: var(--lc-teal);
+  border-color: var(--lc-teal);
+  color: var(--lc-ivory);
+}
+.lp-slots li.is-booked small {
+  color: #f6f3ecd9;
+}
+.lp-slots li.is-pending {
+  background: #c58a2b24;
+  border-color: #c58a2b80;
+  color: #5e3e0b;
+}
+.lp-slots li.is-pending small {
+  color: #5e3e0b;
+}
+.lp-slots li.is-notice,
+.lp-slots li.is-window {
+  background: var(--lc-ivory-2);
+  border-style: dashed;
+  color: var(--lc-text-2);
+}
+.lp-tzbox {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--lc-r-md);
+  background: var(--lc-sky-1);
+  border: 1px solid var(--lc-sky-2);
+}
+.lp-tzbox div {
+  display: grid;
+  gap: 0.15rem;
+}
+.lp-tzbox small {
+  color: var(--lc-text-2);
+  font-size: 0.78rem;
+}
+.lp-blocked {
+  display: grid;
+}
+.lp-blocked li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-blocked li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-blocked div {
+  display: grid;
+  min-width: 0;
+}
+.lp-blocked small {
+  color: var(--lc-text-2);
+}
+@media (max-width: 720px) {
+  .lp-week > li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .lp-week-h {
+    padding-top: 0;
+  }
+  .lp-cal {
+    border-spacing: 2px;
+  }
+  .lp-day-c {
+    min-height: 50px;
+    padding: 0.25rem 0.3rem;
+  }
+  .lp-day-tag {
+    display: none;
+  }
+  .lp-day-n {
+    font-size: 0.8rem;
+  }
+  .lp-day-badge {
+    top: 0.2rem;
+    right: 0.2rem;
+    min-width: 17px;
+    height: 17px;
+    font-size: 0.62rem;
+  }
+  .lp-calnav strong {
+    min-width: 6.5rem;
+    font-size: 0.9rem;
+  }
+}
+.lp-legend-tags {
+  padding-top: 0.9rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-legend-tags li {
+  gap: 0.5rem;
+}

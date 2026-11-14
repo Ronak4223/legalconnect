@@ -1,0 +1,121 @@
+/* styles/views/auth.css — split from the original build; rule order within the file is unchanged. */
+.lp-auth {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  min-height: 100vh;
+}
+.lp-auth-art {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--lc-ivory);
+}
+.lp-auth-veil {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, #0a27338c, #0a2733c7 55%, #0a2733f0);
+}
+.lp-auth-art-in {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.2rem 2.6rem 3rem;
+  position: sticky;
+  top: 0;
+}
+.lp-auth-h {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  line-height: 1.15;
+  max-width: 18ch;
+  margin-bottom: 1.4rem;
+}
+.lp-auth-list {
+  display: grid;
+  gap: 0.8rem;
+}
+.lp-auth-list li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  color: #f6f3eceb;
+}
+.lp-auth-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.4rem;
+  background: var(--lc-ivory);
+  outline: none;
+  gap: 1.2rem;
+}
+.lp-auth-mobile-logo {
+  display: none;
+}
+.lp-auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--lc-surface);
+  border: 1px solid var(--lc-line);
+  border-radius: 1.25rem;
+  box-shadow: var(--lc-shadow-card);
+  padding: 2rem;
+}
+.lp-auth-card.is-wide {
+  max-width: 700px;
+}
+.lp-auth-title {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+}
+.lp-auth-foot {
+  font-size: 0.9rem;
+  color: var(--lc-text-2);
+  text-align: center;
+}
+.lp-auth-demo {
+  max-width: 460px;
+  font-size: 0.78rem;
+  color: var(--lc-text-2);
+  text-align: center;
+  line-height: 1.45;
+}
+.lp-quote {
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--lc-brand);
+  background: var(--lc-ivory-3);
+  border-radius: 0 var(--lc-r-md) var(--lc-r-md) 0;
+  color: var(--lc-navy-2);
+}
+@media (max-width: 960px) {
+  .lp-auth {
+    grid-template-columns: 1fr;
+  }
+  .lp-auth-art {
+    display: none;
+  }
+  .lp-auth-mobile-logo {
+    display: block;
+  }
+  .lp-auth-main {
+    justify-content: flex-start;
+    padding-top: 1.6rem;
+  }
+}
+@media (max-width: 720px) {
+  .lp-auth-card {
+    padding: 1.4rem 1.1rem;
+    border-radius: 1rem;
+  }
+}

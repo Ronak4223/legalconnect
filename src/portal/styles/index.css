@@ -1,0 +1,31 @@
+/* Portal stylesheet entry: shared theme first, then the split files in cascade order. */
+@import "../../../shared/theme/tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components/buttons.css";
+@import "./components/forms.css";
+@import "./components/feedback.css";
+@import "./components/surfaces.css";
+@import "./components/utilities.css";
+@import "./views/auth.css";
+@import "./views/dashboard.css";
+@import "./views/appointments.css";
+@import "./views/verification.css";
+@import "./views/clients.css";
+@import "./views/messages.css";
+@import "./views/availability.css";
+@import "./views/payments.css";
+@import "./views/notifications.css";
+@import "./views/kit.css";
+@import "./views/settings.css";
+@import "./views/profile.css";
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

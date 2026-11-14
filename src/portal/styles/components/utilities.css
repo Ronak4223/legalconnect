@@ -1,0 +1,17 @@
+/* styles/components/utilities.css — split from the original build; rule order within the file is unchanged. */
+.lp-dside,
+.lp-vmain {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .lp-hide-sm {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}

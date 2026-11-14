@@ -1,0 +1,249 @@
+/* styles/views/appointments.css — split from the original build; rule order within the file is unchanged. */
+.lp-ar {
+  display: grid;
+  grid-template-columns: 112px 40px minmax(0, 1fr) auto;
+  gap: 0.8rem 1rem;
+  align-items: center;
+  padding: 0.95rem 0;
+}
+.lp-ar:first-child {
+  padding-top: 0;
+}
+.lp-ar:last-child {
+  padding-bottom: 0;
+}
+.lp-ar-when {
+  display: grid;
+  line-height: 1.25;
+}
+.lp-ar-when strong {
+  font-size: 0.875rem;
+}
+.lp-ar-when span {
+  font-family: var(--lc-font-serif);
+  font-size: 1.1rem;
+}
+.lp-ar-when small {
+  color: var(--lc-text-2);
+  font-size: 0.72rem;
+}
+.lp-ar-main {
+  min-width: 0;
+}
+.lp-ar-main p {
+  color: var(--lc-text-2);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+.lp-ar-t {
+  font-weight: 600;
+  text-decoration: none;
+}
+.lp-ar-t:hover {
+  text-decoration: underline;
+}
+.lp-ar-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  align-items: center;
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--lc-text-2);
+}
+.lp-ar-type {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.lp-ar-act {
+  display: flex;
+  gap: 0.5rem;
+}
+.lp-detail-h {
+  align-items: center;
+}
+.lp-detail-id {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.lp-timeline {
+  display: grid;
+  gap: 1rem;
+}
+.lp-timeline li {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  position: relative;
+}
+.lp-timeline li:not(:last-child):before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  bottom: -1rem;
+  width: 1px;
+  background: var(--lc-line-2);
+}
+.lp-tl-dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin-top: 0.45rem;
+  border-radius: 50%;
+  background: var(--lc-text-3);
+}
+.lp-tl-dot.is-lawyer {
+  background: var(--lc-teal);
+}
+.lp-tl-dot.is-client {
+  background: var(--lc-gold);
+}
+.lp-timeline small {
+  color: var(--lc-text-2);
+  font-size: 0.78rem;
+}
+@media (max-width: 720px) {
+  .lp-ar {
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: start;
+  }
+  .lp-ar-when {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .lp-ar-act {
+    grid-column: 1 / -1;
+  }
+  .lp-detail-id {
+    align-items: flex-start;
+  }
+}
+.lp-newdiv {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+  color: var(--lp-ok-t);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lp-newdiv:before,
+.lp-newdiv:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #2f8f8373;
+}
+.lp-att {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.8125rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: #0d23400f;
+  border: 1px solid var(--lc-line);
+}
+.lp-att span {
+  overflow-wrap: anywhere;
+}
+.lp-att small {
+  opacity: 0.8;
+  white-space: nowrap;
+}
+.lp-bub.is-me .lp-att {
+  background: #ffffff24;
+  border-color: #ffffff47;
+}
+.lp-atts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.lp-atts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.3rem 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--lc-sky-1);
+  border: 1px solid var(--lc-sky-2);
+  font-size: 0.8125rem;
+}
+.lp-atts small {
+  color: var(--lc-text-2);
+}
+.lp-compl {
+  display: grid;
+  gap: 0.55rem;
+}
+.lp-compl li {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--lp-warn-t);
+}
+.lp-compl li.is-ok {
+  color: var(--lp-ok-t);
+}
+.lp-compl a {
+  color: inherit;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.lp-conflicts {
+  display: grid;
+  gap: 0.9rem;
+}
+.lp-conflicts li {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--lc-r-md);
+  background: #a8402f12;
+  border: 1px solid rgba(168, 64, 47, 0.3);
+}
+.lp-conflicts small {
+  color: var(--lc-text-2);
+}
+.lp-conflicts span {
+  font-size: 0.8125rem;
+  color: var(--lp-bad-t);
+}
+.lp-rt {
+  width: 100%;
+  border-collapse: collapse;
+}
+.lp-rt td {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--lc-line);
+}
+.lp-rt td:last-child {
+  text-align: right;
+}
+.lp-rt .is-total td {
+  font-weight: 700;
+  border-bottom: 0;
+  font-size: 1.05rem;
+}
+.lp-nt {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (pointer: coarse), (max-width: 720px) {
+  .lp-ar-t {
+    padding-block: 0.6rem;
+    margin-block: -0.6rem;
+  }
+}

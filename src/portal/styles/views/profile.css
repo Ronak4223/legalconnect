@@ -1,0 +1,57 @@
+/* styles/views/profile.css — split from the original build; rule order within the file is unchanged. */
+.lp-prev {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid var(--lc-line);
+  border-radius: var(--lc-r-lg);
+  background: var(--lc-ivory-3);
+}
+.lp-prev-top {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.lp-prev-top > div {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+  min-width: 0;
+}
+.lp-prev-top span {
+  color: var(--lc-text-2);
+  font-size: 0.8125rem;
+}
+.lp-prev-head {
+  font-family: var(--lc-font-serif);
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+.lp-prev-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.lp-prev-meta {
+  color: var(--lc-text-2);
+  font-size: 0.8125rem;
+}
+.lp-prev-bio {
+  font-size: 0.875rem;
+  color: var(--lc-navy-2);
+  overflow-wrap: anywhere;
+}
+.lp-prev-cons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--lc-line);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.lp-prev-cons span {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}

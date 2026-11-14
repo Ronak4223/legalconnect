@@ -1,0 +1,153 @@
+/* styles/components/buttons.css — split from the original build; rule order within the file is unchanged. */
+.lp-link {
+  color: var(--lc-teal-700);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lp-link:hover {
+  color: var(--lc-teal);
+}
+.lp-link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--lc-teal-700);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--lc-r-pill);
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+  min-height: 44px;
+  padding: 0 1.25rem;
+  font-size: 0.9375rem;
+}
+.lp-btn-sm {
+  min-height: 36px;
+  padding: 0 0.95rem;
+  font-size: 0.8125rem;
+}
+.lp-btn-lg {
+  min-height: 50px;
+  padding: 0 1.6rem;
+}
+.lp-btn-primary {
+  background: var(--lc-teal);
+  color: var(--lc-ivory);
+}
+.lp-btn-primary:hover:not(:disabled) {
+  background: var(--lc-teal-hover);
+  box-shadow: var(--lc-shadow-card);
+}
+.lp-btn-secondary {
+  background: var(--lc-sky-2);
+  color: var(--lc-navy);
+}
+.lp-btn-secondary:hover:not(:disabled) {
+  background: var(--lc-sky-3);
+}
+.lp-btn-outline {
+  background: transparent;
+  color: var(--lc-navy);
+  border-color: var(--lc-line-2);
+}
+.lp-btn-outline:hover:not(:disabled) {
+  border-color: var(--lc-teal);
+  background: #0f3f4d0d;
+}
+.lp-btn-ghost {
+  background: transparent;
+  color: var(--lc-text-2);
+}
+.lp-btn-ghost:hover:not(:disabled) {
+  background: #0d234012;
+  color: var(--lc-navy);
+}
+.lp-btn-danger {
+  background: var(--lc-danger);
+  color: #fff;
+}
+.lp-btn-danger:hover:not(:disabled) {
+  background: #8f3425;
+}
+.lp-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.lp-alert .lp-btn {
+  align-self: center;
+}
+.lp-empty .lp-btn {
+  margin-top: 0.5rem;
+}
+@media (max-width: 720px) {
+  .lp-ar-act .lp-btn {
+    flex: 1;
+  }
+  .lp-page-actions .lp-btn {
+    flex: 1 1 auto;
+  }
+  .lp-modal-f .lp-btn {
+    flex: 1;
+  }
+}
+.lp-inline-form .lp-btn {
+  margin-top: 1.55rem;
+}
+.lp-link-plain {
+  color: inherit;
+  text-decoration: none;
+}
+.lp-link-plain:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1180px) {
+  .lp-inline-form .lp-btn {
+    margin-top: 0;
+    justify-self: start;
+  }
+}
+@media (max-width: 720px) {
+  .lp-chat-h .lp-btn {
+    padding: 0 0.7rem;
+  }
+}
+@media (max-width: 720px) {
+  .lp-composer-row .lp-btn {
+    padding: 0;
+    width: 46px;
+    min-width: 46px;
+  }
+  .lp-composer-row .lp-btn > span {
+    display: none;
+  }
+}
+.lp-photo-a > .lp-btn {
+  align-self: start;
+}
+@media (pointer: coarse), (max-width: 720px) {
+  .lp-link,
+  .lp-link-btn {
+    padding-block: 0.6rem;
+    margin-block: -0.6rem;
+  }
+}

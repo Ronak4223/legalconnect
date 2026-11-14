@@ -1,0 +1,140 @@
+/* styles/views/dashboard.css — split from the original build; rule order within the file is unchanged. */
+.lp-next {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+.lp-next li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+.lp-next p {
+  color: var(--lc-text-2);
+  font-size: 0.875rem;
+}
+.lp-banner {
+  position: relative;
+  border-radius: var(--lc-r-lg);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  min-height: 190px;
+  background: var(--lp-banner) center / cover no-repeat;
+  color: var(--lc-ivory);
+  display: flex;
+  align-items: flex-end;
+  box-shadow: var(--lc-shadow-card);
+}
+.lp-banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #0a2733e6, #0a2733b3 38%, #0a273300 78%);
+}
+.lp-banner-in {
+  position: relative;
+  padding: 1.8rem 1.8rem 1.6rem;
+  max-width: 620px;
+  display: grid;
+  gap: 0.35rem;
+}
+.lp-banner-h {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.12;
+}
+.lp-banner p:last-child {
+  color: #f6f3ece6;
+}
+.lp-vmini {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+}
+.lp-vmini p {
+  color: var(--lc-text-2);
+  font-size: 0.875rem;
+}
+.lp-qa {
+  display: grid;
+  gap: 0.5rem;
+}
+.lp-qa a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.8rem;
+  min-height: 46px;
+  border: 1px solid var(--lc-line);
+  border-radius: var(--lc-r-md);
+  text-decoration: none;
+  font-weight: 500;
+  background: #fff;
+}
+.lp-qa a:hover {
+  border-color: var(--lc-teal);
+  background: #0f3f4d0a;
+}
+.lp-qa span {
+  flex: 1;
+}
+.lp-feed {
+  display: grid;
+  gap: 0.9rem;
+}
+.lp-feed li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+.lp-feed-ic {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--lc-sky-1);
+  color: var(--lc-teal-700);
+}
+.lp-feed div {
+  display: grid;
+  min-width: 0;
+}
+.lp-feed a {
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.lp-feed a:hover {
+  text-decoration: underline;
+}
+.lp-feed small {
+  color: var(--lc-text-3);
+  font-size: 0.75rem;
+}
+.lp-next-list {
+  display: grid;
+  gap: 0.8rem;
+}
+.lp-next-list li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.875rem;
+}
+@media (max-width: 720px) {
+  .lp-banner {
+    min-height: 170px;
+  }
+  .lp-banner:before {
+    background: linear-gradient(180deg, #0a273359, #0a2733e6);
+  }
+  .lp-banner-in {
+    padding: 1.3rem 1.2rem;
+  }
+}

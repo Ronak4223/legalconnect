@@ -1,0 +1,112 @@
+/* styles/views/notifications.css — split from the original build; rule order within the file is unchanged. */
+.lp-ngroup + .lp-ngroup {
+  margin-top: 1rem;
+}
+.lp-ngroup-h {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lc-text-2);
+  margin: 0.6rem 0 0.3rem;
+}
+.lp-nlist {
+  display: grid;
+  border: 1px solid var(--lc-line);
+  border-radius: var(--lc-r-md);
+  overflow: hidden;
+}
+.lp-nitem {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.9rem;
+  border-top: 1px solid var(--lc-line);
+  background: #fff;
+}
+.lp-nitem:first-child {
+  border-top: 0;
+}
+.lp-nitem.is-unread {
+  background: #2f8f8312;
+}
+.lp-nbody {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.lp-nbody p {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+.lp-nbody small {
+  color: var(--lc-text-2);
+  font-size: 0.78rem;
+}
+.lp-ndot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--lc-brand);
+  display: inline-block;
+}
+.lp-ntype {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #0d234014;
+  color: var(--lc-text-2);
+}
+.lp-nact {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.lp-prefrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.lp-prefrow {
+  margin-top: 1rem;
+}
+.lp-matrix-wrap {
+  overflow-x: auto;
+}
+.lp-matrix {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+}
+.lp-matrix th,
+.lp-matrix td {
+  padding: 0.7rem 0.5rem;
+  border-top: 1px solid var(--lc-line);
+  text-align: center;
+  vertical-align: middle;
+}
+.lp-matrix thead th {
+  border-top: 0;
+  font-size: 0.8rem;
+  color: var(--lc-text-2);
+  font-weight: 600;
+}
+.lp-matrix tbody th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+@media (max-width: 720px) {
+  .lp-nitem {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .lp-nact {
+    grid-column: 2;
+  }
+}

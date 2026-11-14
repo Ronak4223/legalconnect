@@ -1,0 +1,291 @@
+/* styles/views/verification.css — split from the original build; rule order within the file is unchanged. */
+.lp-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 0.8rem;
+  margin-top: 0.55rem;
+}
+.lp-rules li {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--lc-text-2);
+}
+.lp-rules li.ok {
+  color: var(--lp-ok-t);
+  font-weight: 500;
+}
+.lp-review {
+  border: 1px solid var(--lc-line);
+  border-radius: var(--lc-r-md);
+  padding: 0.9rem 1rem;
+  background: var(--lc-ivory-3);
+}
+.lp-review header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.lp-review h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--lc-teal-700);
+}
+.lp-review dl {
+  display: grid;
+  gap: 0.45rem;
+}
+.lp-review dl div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0.8rem;
+  font-size: 0.875rem;
+}
+.lp-review dt {
+  color: var(--lc-text-2);
+}
+.lp-review dd {
+  overflow-wrap: anywhere;
+}
+.lp-vside {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+.lp-vgrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 1.25rem;
+  align-items: start;
+}
+.lp-vstatus {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.1rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border-left: 5px solid var(--lc-line-2);
+}
+.lp-vstatus.is-success {
+  border-left-color: var(--lc-brand);
+}
+.lp-vstatus.is-warning {
+  border-left-color: var(--lc-gold);
+}
+.lp-vstatus.is-danger {
+  border-left-color: var(--lc-danger);
+}
+.lp-vstatus > div:nth-child(2) {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+.lp-vstatus p {
+  color: var(--lc-text-2);
+  max-width: 70ch;
+}
+.lp-vstatus-ic {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #0d234014;
+  color: var(--lc-navy);
+}
+.lp-vstatus-ic.is-success {
+  background: #2f8f8329;
+  color: var(--lp-ok-t);
+}
+.lp-vstatus-ic.is-warning {
+  background: #c58a2b33;
+  color: var(--lp-warn-t);
+}
+.lp-vstatus-ic.is-danger {
+  background: #a8402f24;
+  color: var(--lp-bad-t);
+}
+.lp-vstatus-p {
+  text-align: right;
+  display: grid;
+}
+.lp-vstatus-p strong {
+  font-family: var(--lc-font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.lp-vstatus-p small {
+  color: var(--lc-text-2);
+  font-size: 0.75rem;
+}
+.lp-checklist {
+  display: grid;
+}
+.lp-checklist li {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-checklist li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-checklist div {
+  display: grid;
+  min-width: 0;
+}
+.lp-checklist small {
+  color: var(--lc-text-2);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+.lp-ck {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0d234014;
+}
+.lp-ck.is-success {
+  background: #2f8f832e;
+  color: var(--lp-ok-t);
+}
+.lp-ck.is-warning {
+  background: #c58a2b33;
+  color: var(--lp-warn-t);
+}
+.lp-ck.is-danger {
+  background: #a8402f26;
+  color: var(--lp-bad-t);
+}
+.lp-ck.is-info {
+  background: #1c6b7326;
+  color: var(--lp-info-t);
+}
+.lp-docs {
+  display: grid;
+  gap: 1.2rem;
+}
+.lp-doc {
+  min-width: 0;
+}
+@media (max-width: 1180px) {
+  .lp-vgrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .lp-vstatus {
+    grid-template-columns: auto 1fr;
+  }
+  .lp-vstatus-p {
+    grid-column: 1 / -1;
+    text-align: left;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .lp-rules {
+    grid-template-columns: 1fr;
+  }
+  .lp-review dl div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .lp-checklist li {
+    grid-template-columns: 30px 1fr;
+  }
+}
+.lp-ident {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+.lp-ident h3 {
+  margin-bottom: 0.1rem;
+}
+.lp-ident p {
+  color: var(--lc-text-2);
+}
+.lp-quals {
+  display: grid;
+  gap: 0.35rem;
+}
+.lp-quals small {
+  color: var(--lc-text-2);
+}
+.lp-docsum {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--lc-line);
+}
+.lp-docsum li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 720px) {
+  .lp-ident {
+    align-items: flex-start;
+  }
+}
+.lp-nic {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #0d234014;
+  color: var(--lc-navy);
+}
+.lp-nic.k-request,
+.lp-nic.k-payment {
+  background: #c58a2b2e;
+  color: var(--lp-warn-t);
+}
+.lp-nic.k-appointment {
+  background: #1c6b7324;
+  color: var(--lp-info-t);
+}
+.lp-nic.k-message {
+  background: #0f3f4d1f;
+  color: var(--lc-teal);
+}
+.lp-nic.k-verify {
+  background: #2f8f8329;
+  color: var(--lp-ok-t);
+}
+
+/* "What clients see" illustration gallery (assets: shared/assets/img/trust-1..4.jpg) */
+.lp-vgallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.9rem;
+}
+.lp-vgallery li {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--lc-text-2);
+}
+.lp-vgallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--lc-r-md);
+  border: 1px solid var(--lc-line);
+  background: var(--lc-sky-1);
+}

@@ -1,0 +1,261 @@
+/* styles/base.css — split from the original build; rule order within the file is unchanged. */
+/* Portal layout dimensions + local aliases onto the shared theme (shared/theme/tokens.css). */
+:root {
+  --lp-side: 264px; /* sidebar width */
+  --lp-top: 64px; /* top bar height */
+  --lp-ok-t: var(--lc-success-text);
+  --lp-warn-t: var(--lc-warning-text);
+  --lp-bad-t: var(--lc-danger-text);
+  --lp-info-t: var(--lc-info-text);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  margin: 0;
+  background: var(--lc-ivory);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.lp-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.lp-ic {
+  flex: none;
+}
+.lp-block {
+  width: 100%;
+}
+.lp-mb {
+  margin-bottom: 1rem;
+}
+.lp-mt {
+  margin-top: 1rem;
+}
+.lp-mt-s {
+  margin-top: 0.6rem;
+}
+.lp-pad {
+  padding: 1rem;
+}
+.lp-muted {
+  color: var(--lc-text-2);
+}
+.lp-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+.lp-h1 {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+  line-height: 1.15;
+}
+.lp-h3 {
+  font-family: var(--lc-font-serif);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+.lp-h4 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--lc-text-2);
+  margin: 1.2rem 0 0.5rem;
+}
+.lp-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--lc-teal-700);
+  margin-bottom: 0.35rem;
+}
+.lp-eyebrow.is-light {
+  color: var(--lc-mint);
+}
+.lp-lede {
+  color: var(--lc-text-2);
+  margin-top: 0.5rem;
+  max-width: 62ch;
+}
+.lp-hint {
+  font-size: 0.8125rem;
+  color: var(--lc-text-2);
+  margin-top: 0.3rem;
+}
+.lp-err {
+  display: flex;
+  gap: 0.35rem;
+  align-items: flex-start;
+  font-size: 0.8125rem;
+  color: var(--lp-bad-t);
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+.lp-err .lp-ic {
+  margin-top: 2px;
+}
+.lp-req {
+  color: var(--lp-bad-t);
+}
+.lp-opt {
+  color: var(--lc-text-3);
+  font-weight: 400;
+}
+.lp-spin {
+  width: 15px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: lp-rot 0.7s linear infinite;
+}
+@keyframes lp-rot {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-spin {
+    animation-duration: 1.6s;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .lp-app * {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+.lp-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--lc-text-2);
+  position: relative;
+}
+.lp-icon-btn:hover {
+  background: #0d234014;
+  color: var(--lc-navy);
+}
+.lp-form {
+  display: grid;
+  gap: 1.1rem;
+}
+@keyframes lp-sh {
+  to {
+    background-position: -200% 0;
+  }
+}
+.lp-toast .lp-icon-btn {
+  color: var(--lc-ivory);
+  width: 36px;
+  height: 36px;
+}
+.lp-toast .lp-icon-btn:hover {
+  background: #ffffff24;
+}
+@keyframes lp-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.lp-skip {
+  position: fixed;
+  left: 0.75rem;
+  top: -60px;
+  z-index: 300;
+  background: var(--lc-teal);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.lp-skip:focus {
+  top: 0.75rem;
+}
+.lp-auth-list .lp-ic {
+  color: var(--lc-mint);
+}
+.lp-auth-card .lp-form,
+.lp-auth-card .lp-lede + .lp-form,
+.lp-auth-card > .lp-focus-alert {
+  margin-top: 1.3rem;
+}
+.lp-focus-alert {
+  outline: none;
+}
+.lp-qa .lp-ic {
+  color: var(--lc-teal-700);
+}
+.lp-next-list .lp-ic {
+  margin-top: 2px;
+  color: var(--lc-teal-700);
+}
+.lp-plan-list .lp-ic {
+  margin-top: 3px;
+  color: var(--lc-brand);
+}
+.lp-inline-form {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: start;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--lc-line-2);
+}
+.lp-atts .lp-icon-btn {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 1180px) {
+  .lp-inline-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .lp-dls li > .lp-icon-btn {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .lp-inline-form {
+    grid-template-columns: 1fr;
+  }
+}
+.lp-span {
+  grid-column: 1 / -1;
+}
+.lp-docsum .lp-ic {
+  color: var(--lc-teal-700);
+}
+.lp-week-r > .lp-muted {
+  padding-top: 0.5rem;
+}
+.lp-tzbox .lp-ic {
+  margin-top: 2px;
+  color: var(--lc-teal-700);
+}

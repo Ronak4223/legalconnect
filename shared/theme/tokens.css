@@ -1,0 +1,68 @@
+/* ==========================================================================
+   LegalConnect theme — ONE source of truth for public-site and lawyer-portal.
+   Values were taken from the live public site (see docs/THEME.md for provenance).
+   Portal build inlines this file; the public site links it.
+   ========================================================================== */
+:root {
+  /* Brand + neutrals */
+  --lc-ink: #050c18;
+  --lc-navy: #0d2340;
+  --lc-navy-2: #17385f;
+  --lc-teal-900: #0a2733;
+  --lc-teal-800: #0e3645;
+  --lc-teal: #0f3f4d;
+  --lc-teal-hover: #15566a;
+  --lc-teal-700: #1c6b73;
+  --lc-brand: #2f8f83;
+  --lc-brand-hi: #3aa89a;
+  --lc-mint: #9fe0d6;
+  --lc-ivory: #f6f3ec;
+  --lc-ivory-2: #f4f1ea;
+  --lc-ivory-3: #f8f6f1;
+  --lc-sky-1: #f2f7f9;
+  --lc-sky-2: #dcebf2;
+  --lc-sky-3: #c5dde8;
+  --lc-surface: #fffdf9;
+  --lc-gold: #c58a2b;
+
+  /* Status colours (added for the portal; derived from existing brand colours except danger) */
+  --lc-success: #23786d;
+  --lc-warning: #9a6a1c;
+  --lc-info: #1c6b73;
+  --lc-danger: #a8402f;
+  --lc-danger-soft: #ffb4a8;
+
+  /* Status TEXT tones — darker variants of the status colours that pass WCAG AA (4.5:1) on ivory/tinted backgrounds */
+  --lc-success-text: #1b5e55;
+  --lc-warning-text: #7a5210;
+  --lc-danger-text: #8a3224;
+  --lc-info-text: #17575f;
+
+  /* Text + lines */
+  --lc-text: var(--lc-navy);
+  --lc-text-2: rgba(13, 35, 64, .72);
+  --lc-text-3: rgba(13, 35, 64, .7);
+  --lc-line: rgba(13, 35, 64, .14);
+  --lc-line-2: rgba(13, 35, 64, .24);
+
+  /* Type */
+  --lc-font-serif: Lora, Georgia, "Times New Roman", serif;
+  --lc-font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Shape + elevation */
+  --lc-r-sm: .5rem;
+  --lc-r-md: .75rem;
+  --lc-r-lg: 1rem;
+  --lc-r-pill: 9999px;
+  --lc-shadow-card: 0 8px 24px rgba(13, 35, 64, .08);
+  --lc-shadow-raise: 0 14px 30px rgba(13, 35, 64, .16);
+  --lc-shadow-pop: 0 18px 40px rgba(13, 35, 64, .2);
+
+  /* Public-site aliases (dark hero theme) — kept so the public CSS did not need renaming */
+  --ink: var(--lc-ink);
+  --text: #f4efe6;
+  --muted: rgba(244, 239, 230, 0.74);
+  --line: rgba(255, 255, 255, 0.22);
+  --accent: var(--lc-brand);
+  --accent-hi: var(--lc-brand-hi);
+}

@@ -1,0 +1,228 @@
+/* styles/views/messages.css — split from the original build; rule order within the file is unchanged. */
+.lp-msg {
+  display: grid;
+  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  background: var(--lc-surface);
+  border: 1px solid var(--lc-line);
+  border-radius: var(--lc-r-lg);
+  box-shadow: var(--lc-shadow-card);
+  overflow: hidden;
+  height: clamp(520px, calc(100dvh - 17rem), 820px);
+}
+.lp-msg-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid var(--lc-line);
+}
+.lp-msg-tools {
+  padding: 0.9rem 0.9rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.lp-convs {
+  overflow-y: auto;
+  flex: 1;
+}
+.lp-conv {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.8rem 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--lc-line);
+  position: relative;
+}
+.lp-conv:hover {
+  background: #0d23400a;
+}
+.lp-conv.is-active {
+  background: #0f3f4d17;
+}
+.lp-conv.is-unread:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--lc-brand);
+}
+.lp-conv-main {
+  display: grid;
+  min-width: 0;
+  gap: 0.1rem;
+}
+.lp-conv-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.lp-conv-top strong {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lp-conv.is-unread .lp-conv-top strong {
+  font-weight: 700;
+}
+.lp-conv-top time {
+  font-size: 0.72rem;
+  color: var(--lc-text-3);
+  flex: none;
+}
+.lp-conv-prev {
+  font-size: 0.8125rem;
+  color: var(--lc-text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lp-conv.is-unread .lp-conv-prev {
+  color: var(--lc-navy);
+  font-weight: 500;
+}
+.lp-conv-n {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 0.4rem;
+  border-radius: 11px;
+  background: var(--lc-gold);
+  color: #2b1c05;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-grid;
+  place-items: center;
+}
+.lp-msg-chat {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.lp-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+.lp-chat-h {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--lc-line);
+}
+.lp-chat-id {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+}
+.lp-chat-id small {
+  color: var(--lc-text-2);
+  font-size: 0.78rem;
+}
+.lp-chat-back {
+  display: none;
+  text-decoration: none;
+}
+.lp-chat-mock {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  color: var(--lp-info-t);
+  background: #1c6b7314;
+  border-bottom: 1px solid var(--lc-line);
+}
+.lp-chat-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: var(--lc-ivory-3);
+}
+.lp-chat-empty {
+  margin: auto;
+  text-align: center;
+  color: var(--lc-text-2);
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+}
+.lp-bub {
+  max-width: min(78%, 560px);
+  padding: 0.6rem 0.85rem;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: var(--lc-surface);
+  border: 1px solid var(--lc-line);
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.15rem 0;
+}
+.lp-bub p {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.lp-bub time {
+  font-size: 0.7rem;
+  color: var(--lc-text-3);
+}
+.lp-bub.is-me {
+  margin-left: auto;
+  background: var(--lc-teal);
+  color: var(--lc-ivory);
+  border-color: var(--lc-teal);
+  border-radius: 1rem 1rem 0.25rem;
+}
+.lp-bub.is-me time {
+  color: #f6f3ecd1;
+}
+@media (max-width: 900px) {
+  .lp-msg {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+  .lp-msg:not(.has-active) .lp-msg-chat {
+    display: none;
+  }
+  .lp-msg.has-active .lp-msg-list {
+    display: none;
+  }
+  .lp-msg-list {
+    border-right: 0;
+    min-height: 420px;
+  }
+  .lp-msg.has-active .lp-msg-chat {
+    height: calc(100dvh - 11.5rem);
+    min-height: 440px;
+  }
+  .lp-chat-back {
+    display: inline-grid;
+  }
+  .lp-bub {
+    max-width: 88%;
+  }
+}
+.lp-chat-id strong,
+.lp-chat-id small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .lp-chat-h {
+    padding: 0.6rem;
+    gap: 0.5rem;
+  }
+}
