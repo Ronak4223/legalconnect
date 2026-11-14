@@ -11,16 +11,14 @@ export function useHeroIntro(rootRef) {
   useGSAP(() => {
     const root = rootRef.current;
     if (!root || prefersReducedMotion()) return;
-    const [img, , header, content, stats] = root.children; // `img` is the media wrapper
+    const [img, , header, content, stats] = root.children;
     const h1 = content.querySelector("h1");
     const rest = [...content.children].filter((el) => el !== h1);
 
     gsap.set([header, ...rest, stats], { autoAlpha: 0 });
-    gsap.set(img, { scale: 1.18 });
     const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
     onReveal(() => tl.play()); // starts as the page-transition curtain begins to lift
-    tl.to(img, { scale: 1, duration: 2.6, ease: "power2.out" }, 0)
-      .fromTo(header, { y: -24 }, { y: 0, autoAlpha: 1, duration: 0.9 }, 0.15)
+    tl.fromTo(header, { y: -24 }, { y: 0, autoAlpha: 1, duration: 0.9 }, 0.15)
       .fromTo(rest, { y: 28 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.12, clearProps: "transform" }, 0.75)
       .fromTo(stats, { y: 30 }, { y: 0, autoAlpha: 1, duration: 0.9, clearProps: "transform" }, 1.25);
 
@@ -39,14 +37,14 @@ export function useHeroIntro(rootRef) {
     // Cursor depth: footage (far) and copy (near) move in opposite directions. quickTo keeps it cheap.
     if (finePointer()) {
       const layers = gsap.utils.toArray(".hero-bg-img", root);
-      gsap.set(layers, { scale: 1.06 });
+      gsap.set(layers, { scale: 1.01 });
       const mx = layers.map((l) => gsap.quickTo(l, "x", { duration: 1.4, ease: "power3.out" }));
       const my = layers.map((l) => gsap.quickTo(l, "y", { duration: 1.4, ease: "power3.out" }));
       const cx = gsap.quickTo(".hero-copy", "x", { duration: 1.1, ease: "power3.out" });
       const cy = gsap.quickTo(".hero-copy", "y", { duration: 1.1, ease: "power3.out" });
       const move = (e) => {
         const nx = e.clientX / window.innerWidth - 0.5, ny = e.clientY / window.innerHeight - 0.5;
-        mx.forEach((f) => f(nx * -26)); my.forEach((f) => f(ny * -16));
+        mx.forEach((f) => f(nx * -12)); my.forEach((f) => f(ny * -8));
         cx(nx * 8); cy(ny * 5);
       };
       root.addEventListener("pointermove", move);
