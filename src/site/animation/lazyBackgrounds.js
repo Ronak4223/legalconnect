@@ -11,9 +11,25 @@ export function lazyBackgrounds(root) {
   const els = [...root.querySelectorAll(TARGETS)];
   const mark = (el) => { el.classList.add("is-near"); el.dispatchEvent(new CustomEvent("lc:near")); };
   if (!("IntersectionObserver" in window)) { els.forEach(mark); return () => {}; }
+  const preloadDistance = window.innerHeight * 2;
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) if (e.isIntersecting) { mark(e.target); io.unobserve(e.target); }
-  }, { rootMargin: "200% 0px 200% 0px" });
+  }, { rootMargin: `${preloadDistance}px 0px ${preloadDistance}px` });
   els.forEach((el) => io.observe(el));
-  return () => io.disconnect();
+  const loadNearbyOnResume = () => {
+    if (document.hidden) return;
+    for (const el of els) {
+      if (el.classList.contains("is-near")) continue;
+      const { top, bottom } = el.getBoundingClientRect();
+      if (top <= window.innerHeight + preloadDistance && bottom >= -preloadDistance) {
+        mark(el);
+        io.unobserve(el);
+      }
+    }
+  };
+  document.addEventListener("visibilitychange", loadNearbyOnResume);
+  return () => {
+    io.disconnect();
+    document.removeEventListener("visibilitychange", loadNearbyOnResume);
+  };
 }
