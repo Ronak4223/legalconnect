@@ -22,7 +22,7 @@ export default function NotificationsView() {
       </div>
       <div className="panel" style={{ marginTop: "1rem", padding: "0 1.3rem" }}>
         {shown.length ? shown.map((n) => (
-          <div key={n.id} style={{ display: "flex", alignItems: "center", gap: ".4rem" }}>
+          <div key={n.id} className="nt-row" style={{ display: "flex", alignItems: "center", gap: ".4rem" }}>
             <button type="button" className={`nt ${n.read ? "" : "unread"}`} onClick={() => { actions.markNotif(n.id); if (n.link) go(n.link); }}>
               <span className="nt-ic"><Ic n={KIND[n.kind] || "bell"} size={19} /></span>
               <span style={{ flex: 1, minWidth: 0 }}><b>{n.title}</b><p>{n.body}</p></span>
