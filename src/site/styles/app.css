@@ -201,6 +201,7 @@ html.no-scroll{overflow:hidden}
 .page-band .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .page-band .sh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,18,32,.92) 8%,rgba(6,18,32,.55) 55%,rgba(6,18,32,.25))}
 .page-band .c{position:relative}
+@media(max-width:767px){.about-hero img.bg{inset:0;width:100%;height:100%;object-fit:cover}.about-hero video.bg{inset:0 0 auto;height:auto;aspect-ratio:720/340;object-fit:contain;object-position:center top!important;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}}
 .fa{cursor:default}
 .faq details{border-bottom:1px solid var(--line)}.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.15rem 0;font-family:"Lora Variable",Lora,serif;font-size:1.08rem}
 .faq summary::-webkit-details-marker{display:none}.faq summary .ic-s{transition:transform .3s;flex:none}.faq details[open] summary .ic-s{transform:rotate(45deg)}.faq p{margin:0 0 1.2rem;color:var(--muted);line-height:1.7;max-width:70ch}

@@ -14,7 +14,7 @@ export default function About() {
   const rv = useReveal([]);
   return (
     <div ref={rv}>
-      <section className="page-band" style={{ minHeight: "min(86vh,720px)", display: "flex", alignItems: "flex-end", background: "#050c14" }}>
+      <section className="page-band about-hero" style={{ minHeight: "min(86vh,720px)", display: "flex", alignItems: "flex-end", background: "#050c14" }}>
         <JusticeVideo position="30% 40%" /><div className="sh" style={{ background: "linear-gradient(180deg,rgba(5,12,20,.55),rgba(5,12,20,.2) 40%,rgba(5,12,20,.92))" }} />
         <div className="wrap c" style={{ paddingBottom: "clamp(2.5rem,7vw,5rem)", paddingTop: "9rem" }}>
           <p className="eyebrow" style={{ color: "var(--gold)" }}>About LegalConnect</p>
